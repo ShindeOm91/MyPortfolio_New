@@ -1,0 +1,127 @@
+<style>
+    /* @media (min-width: 1024px) {
+        .lg\:text-7xl {
+            font-size: 4.5rem;
+            line-height: 1;
+        }
+    } */
+
+    .text-foreground\/80 {
+        color: hsl(var(--foreground) / .8);
+    }
+
+    .text-transparent {
+        color: transparent;
+    }
+
+    .bg-background {
+        background-color: hsl(var(--background));
+    }
+
+    .flex-grow,
+    .grow {
+        flex-grow: 1;
+    }
+
+    * {
+        border-color: hsl(var(--border));
+    }
+    body {
+    background-color: black;
+    /* color: white; */
+    
+    }
+    .bg-primary {
+        background-color: hsl(var(--primary));
+    }
+    .container.text-center {
+        text-align: center;
+    }
+    span.block.bg-clip-text.bg-gradient-to-r.from-primary.to-accent {
+        font-size: 90px;
+        color: deepskyblue;
+    }
+    .button-group {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+/* Outline Button */
+.btn-outline {
+  background: transparent;
+  border: 2px solid #4f46e5;
+  color: #4f46e5;
+}
+
+.btn-outline:hover {
+  background-color: #4f46e5;
+  color: white;
+}
+p.mt-6 {
+    background-color: gainsboro;
+    font-family: monospace;
+}
+
+</style>
+
+
+<div class="">
+    <main class="flex-grow">
+        <section id="home"
+            class="">
+            <div
+                class="absolute inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(#87a4b8_1px,transparent_1px)]">
+            </div>
+            <div class="container text-center">
+                <h1 class="text-4xl font-bold tracking-tight font-headline sm:text-5xl md:text-6xl lg:text-7xl"><span
+                        class="block text-foreground/80">Hello, I'm</span><!-- <br> -->
+                        <span class="block bg-clip-text bg-gradient-to-r from-primary to-accent">Omkar
+                        Shinde</span>
+                </h1>
+                <p class="mt-6">A passionate Full-Stack Developer
+                    building modern and responsive web applications.</p>
+                <!-- <div class="mt-10 flex justify-center gap-4">
+                        <button (click)="toggleProjects()">{{btnText}}</button>
+                        <button (click)="toggleContact()">Contact Me</button>
+                        <button (click)="toggleAbout()">About Me</button>
+                </div> -->
+                <div class="button-group">
+                    <button class="btn btn-outline" (click)="toggleProjects()">🚀 {{btnText}}</button>
+                    <button class="btn btn-outline" (click)="toggleContact()">📧 Contact Me</button>
+                    <button class="btn btn-outline" (click)="toggleAbout()">👨‍💻 About Me</button>
+                </div>
+                        
+            </div>
+        </section>
+    </main>
+</div>
+
+<div class="container text-center" id="projects" *ngIf="showProjects">
+    <app-my-projects></app-my-projects>
+</div>
+<div class="container text-center" id="contact" *ngIf="showContact">
+    <app-contact-me></app-contact-me>
+</div>
+<div class="container text-center" id="about" *ngIf="showAbout">
+    <app-about-me></app-about-me>
+</div>
+
+<!-- <hello-world-interpolation></hello-world-interpolation>
+<hello-world-bindings></hello-world-bindings>
+<hello-world-template></hello-world-template>
+<hello-world-ngif></hello-world-ngif>
+<hello-world-di></hello-world-di> -->

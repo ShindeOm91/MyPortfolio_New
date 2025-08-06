@@ -1,0 +1,47 @@
+.about-section {
+  padding: 4rem 1.5rem;
+  background: var(--about-bg, hsl(var(--background)));
+  transition: background-color 0.3s ease-in-out;
+}
+
+.about-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #4f46e5, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-text {
+  font-size: 1.125rem;
+  line-height: 1.9;
+  color: hsl(var(--foreground) / 0.9);
+  margin-bottom: 1.75rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.about-text strong {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.about-text a {
+  color: #06b6d4;
+  font-weight: 600;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.about-text a:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+
