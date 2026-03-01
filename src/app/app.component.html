@@ -79,10 +79,15 @@ p.mt-6 {
 </style>
 
 
-<div class="">
+<div class="dark:bg-slate-900 dark:text-white transition-all duration-300">
     <main class="flex-grow">
+        <div class="theme-toggle">
+            <button class="toggle-btn" (click)="toggleTheme()">
+                {{ isDarkMode ? '🌙' : '☀' }}
+            </button>
+        </div>
         <section id="home"
-            class="">
+            class="dark:bg-slate-900 dark:text-white">
             <div
                 class="absolute inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(#87a4b8_1px,transparent_1px)]">
             </div>

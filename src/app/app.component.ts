@@ -5,16 +5,20 @@ import { AboutMeComponent } from "./about-me/about-me.component";
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent { 
-
+export class AppComponent {
   showProjects = false;
   btnText = 'View My Work';
   showContact = false;
   showAbout = false;
   isDarkMode = false;
 
-  constructor() {
-    
+  constructor() {}
+
+  ngOnInit() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      this.enableDarkMode();
+    }
   }
 
   toggleProjects() {
@@ -31,7 +35,7 @@ export class AppComponent {
     this.showContact = !this.showContact;
     if (this.showProjects) {
       this.showProjects = false;
-      this.btnText = 'View My Work';  
+      this.btnText = 'View My Work';
     }
     if (this.showAbout) {
       this.showAbout = false;
@@ -41,7 +45,7 @@ export class AppComponent {
     this.showAbout = !this.showAbout;
     if (this.showProjects) {
       this.showProjects = false;
-      this.btnText = 'View My Work';  
+      this.btnText = 'View My Work';
     }
     if (this.showContact) {
       this.showContact = false;
@@ -55,5 +59,27 @@ export class AppComponent {
     } else {
       document.documentElement.classList.remove('dark');
     }
+  }
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+
+    if (this.isDarkMode) {
+      this.enableDarkMode();
+    } else {
+      this.disableDarkMode();
+    }
+  }
+
+  enableDarkMode() {
+    document.body.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+    this.isDarkMode = true;
+  }
+
+  disableDarkMode() {
+    document.body.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+    this.isDarkMode = false;
   }
 }
