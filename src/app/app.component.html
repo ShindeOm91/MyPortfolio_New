@@ -1,132 +1,196 @@
-<style>
-    /* @media (min-width: 1024px) {
-        .lg\:text-7xl {
-            font-size: 4.5rem;
-            line-height: 1;
-        }
-    } */
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="Omkar Shinde home">
+    <span class="brand-mark">OS</span>
+    <span>Omkar Shinde</span>
+  </a>
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="theme-button" type="button" (click)="toggleTheme()" [attr.aria-label]="isDarkMode ? 'Use light theme' : 'Use dark theme'">
+    {{ isDarkMode ? '☀' : '☾' }}
+  </button>
+</header>
 
-    .text-foreground\/80 {
-        color: hsl(var(--foreground) / .8);
-    }
+<main>
+  <section id="home" class="hero">
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+    <div class="hero-copy">
+      <p class="eyebrow"><span></span> Available for opportunities</p>
+      <h1>Building reliable software <em>that scales.</em></h1>
+      <p class="hero-summary">
+        Java Full-Stack Developer crafting enterprise-grade applications with
+        Spring Boot, Angular, React, and modern cloud-ready architecture.
+      </p>
+      <div class="hero-actions">
+        <a class="primary-button" href="#projects">Explore my work <span>→</span></a>
+        <a class="secondary-button" href="mailto:oshinde91199@gmail.com">Let's talk</a>
+      </div>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/in/omkar-shinde-java-developer/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="tel:+919175538261">+91 91755 38261</a>
+      </div>
+    </div>
 
-    .text-transparent {
-        color: transparent;
-    }
-
-    .bg-background {
-        background-color: hsl(var(--background));
-    }
-
-    .flex-grow,
-    .grow {
-        flex-grow: 1;
-    }
-
-    * {
-        border-color: hsl(var(--border));
-    }
-    body {
-    background-color: black;
-    /* color: white; */
-    
-    }
-    .bg-primary {
-        background-color: hsl(var(--primary));
-    }
-    .container.text-center {
-        text-align: center;
-    }
-    span.block.bg-clip-text.bg-gradient-to-r.from-primary.to-accent {
-        /* font-size: 90px; */
-        color: deepskyblue;
-    }
-    .button-group {
-  margin-top: 2.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s ease;
-  min-width: 140px;
-}
-
-/* Outline Button */
-.btn-outline {
-  background: transparent;
-  border: 2px solid #4f46e5;
-  color: #4f46e5;
-}
-
-.btn-outline:hover {
-  background-color: #4f46e5;
-  color: white;
-}
-p.mt-6 {
-    background-color: gainsboro;
-    font-family: monospace;
-}
-
-</style>
-
-
-<div class="dark:bg-slate-900 dark:text-white transition-all duration-300">
-    <main class="flex-grow">
-        <div class="theme-toggle">
-            <button class="toggle-btn" (click)="toggleTheme()">
-                {{ isDarkMode ? '🌙' : '☀' }}
-            </button>
+    <div class="hero-visual" aria-label="Developer profile summary">
+      <div class="code-card">
+        <div class="code-card-top">
+          <div class="window-dots"><i></i><i></i><i></i></div>
+          <span>Developer.java</span>
         </div>
-        <section id="home"
-            class="dark:bg-slate-900 dark:text-white">
-            <div
-                class="absolute inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(#87a4b8_1px,transparent_1px)]">
-            </div>
-            <div class="container text-center">
-                <h1 class="text-4xl font-bold tracking-tight font-headline sm:text-5xl md:text-6xl lg:text-7xl"><span
-                        class="block text-foreground/80">Hello, I'm</span><!-- <br> -->
-                        <span class="block bg-clip-text bg-gradient-to-r from-primary to-accent">Omkar
-                        Shinde</span>
-                </h1>
-                <p class="mt-6">A passionate Full-Stack Developer
-                    building modern and responsive web applications.</p>
-                <!-- <div class="mt-10 flex justify-center gap-4">
-                        <button (click)="toggleProjects()">{{btnText}}</button>
-                        <button (click)="toggleContact()">Contact Me</button>
-                        <button (click)="toggleAbout()">About Me</button>
-                </div> -->
-                <div class="button-group">
-                    <button class="btn btn-outline" (click)="toggleProjects()">🚀 {{btnText}}</button>
-                    <button class="btn btn-outline" (click)="toggleContact()">📧 Contact Me</button>
-                    <button class="btn btn-outline" (click)="toggleAbout()">👨‍💻 About Me</button>
-                </div>
-                        
-            </div>
-        </section>
-    </main>
-</div>
+        <div class="code-lines">
+          <span><b>public class</b> <strong> OmkarShinde</strong> &#123; </span>
+          <span>&nbsp;&nbsp;<b>String</b> role = <q>"Full-Stack Developer"</q>;</span>
+          <span>&nbsp;&nbsp;<b>int</b> experience = <mark>3.5</mark>;</span>
+          <span>&nbsp;&nbsp;Stack <strong>stack</strong> = new Stack();</span>
+          <span>&#125;</span>
+        </div>
+        <div class="stack-float stack-float-one">Spring Boot</div>
+        <div class="stack-float stack-float-two">Angular</div>
+      </div>
+    </div>
+  </section>
 
-<div class="container text-center" id="projects" *ngIf="showProjects">
-    <app-my-projects></app-my-projects>
-</div>
-<div class="container text-center" id="contact" *ngIf="showContact">
-    <app-contact-me></app-contact-me>
-</div>
-<div class="container text-center" id="about" *ngIf="showAbout">
-    <app-about-me></app-about-me>
-</div>
+  <section class="metrics" aria-label="Career highlights">
+    <article><strong>3.9+</strong><span>Years experience</span></article>
+    <article><strong>4+</strong><span>Enterprise modules</span></article>
+    <article><strong>40%</strong><span>Faster form delivery</span></article>
+    <article><strong>4</strong><span>Domain platforms</span></article>
+  </section>
 
-<!-- <hello-world-interpolation></hello-world-interpolation>
-<hello-world-bindings></hello-world-bindings>
-<hello-world-template></hello-world-template>
-<hello-world-ngif></hello-world-ngif>
-<hello-world-di></hello-world-di> -->
+  <section id="about" class="content-section about-section">
+    <div class="section-heading">
+      <p class="section-kicker">01 / About</p>
+      <h2>Engineer. Problem solver. <span>Team partner.</span></h2>
+    </div>
+    <div class="about-grid">
+      <p class="about-lead">
+        I turn complex business requirements into reusable, high-performance
+        software across healthcare, HR, quality, and clinical research.
+      </p>
+      <div class="about-detail">
+        <p>
+          With 3.5+ years of hands-on experience, I own modules end-to-end, from requirement 
+          analysis and development to testing, deployment, and production support.
+        </p>
+        <p>
+          My expertise includes dynamic form engines, role-based workflows, interactive dashboards,
+          REST API integration, and building scalable, user-friendly applications using Angular and Spring Boot.
+        </p>
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      <article>
+        <span class="skill-number">01</span>
+        <h3>Backend</h3>
+        <p>Java · Spring Boot · MVC · Hibernate · REST APIs · Microservices</p>
+      </article>
+      <article>
+        <span class="skill-number">02</span>
+        <h3>Frontend</h3>
+        <p>Angular · React · TypeScript · JavaScript · HTML · CSS</p>
+      </article>
+      <article>
+        <span class="skill-number">03</span>
+        <h3>Data & Tools</h3>
+        <p>MySQL · MS SQL Server · Git · Maven · Postman · IntelliJ</p>
+      </article>
+      <article>
+        <span class="skill-number">04</span>
+        <h3>Engineering</h3>
+        <p>RBAC · Audit trails · API design · Agile · Version control</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience" class="content-section experience-section">
+    <div class="section-heading">
+      <p class="section-kicker">02 / Experience</p>
+      <h2>Where I’ve made an <span>impact.</span></h2>
+    </div>
+    <article class="experience-card">
+      <div class="experience-meta">
+        <span class="company-icon">C</span>
+        <div>
+          <h3>Cahoot Technologies</h3>
+          <p>Ahmedabad, Gujarat</p>
+        </div>
+      </div>
+      <div class="experience-role">
+        <div class="role-heading">
+          <h3>Java Full-Stack Developer</h3>
+          <span>Dec 2022 — Present</span>
+        </div>
+        <ul>
+          <li>Delivering end-to-end solutions across HRMS, QMS, CTMS, eTMF, and EDC platforms.</li>
+          <li>Built dynamic, metadata-driven Angular forms that reduce new-form development time by about 40%.</li>
+          <li>Designed multi-level approval workflows with field and section-level role-based access control.</li>
+          <li>Integrated Spring Boot APIs for sub-second form rendering and real-time updates.</li>
+          <li>Implemented audit trails, version control, and event-driven notifications for compliance.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="projects" class="content-section projects-section">
+    <div class="section-heading heading-row">
+      <div>
+        <p class="section-kicker">03 / Projects</p>
+        <h2>Selected <span>work.</span></h2>
+      </div>
+    </div>
+    <div class="project-grid">
+      <article class="project-card featured">
+        <div class="project-top"><span>Clinical Research</span><span>01</span></div>
+        <h3>Electronic Data Capture</h3>
+        <p>Dynamic clinical form platform with conditional logic, real-time validation, release history, and audit-ready records.</p>
+        <div class="project-tags"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>MySQL</span></div>
+      </article>
+      <article class="project-card">
+        <div class="project-top"><span>Trial Operations</span><span>02</span></div>
+        <h3>Clinical Trial Management</h3>
+        <p>Workflow system for trial documentation, site monitoring, historical versions, and multi-role approvals.</p>
+        <div class="project-tags"><span>Java</span><span>Angular</span><span>Spring Boot</span><span>MySQL</span></div>
+      </article>
+      <article class="project-card">
+        <div class="project-top"><span>Quality Operations</span><span>03</span></div>
+        <h3>Quality Management System</h3>
+        <p>Configurable form builder and review workflow with granular access control and section-level send-back.</p>
+        <div class="project-tags"><span>Form Engine</span><span>Java</span><span>Angular</span><span>RBAC</span></div>
+      </article>
+      <article class="project-card">
+        <div class="project-top"><span>Enterprise HR</span><span>04</span></div>
+        <h3>Human Resource Management</h3>
+        <p>Performance, recruitment, travel, claims, organizational structure, and role-rights modules.</p>
+        <div class="project-tags"><span>Java</span><span>JSP</span><span>MS SQL</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="content-section education-section">
+    <div class="section-heading">
+      <p class="section-kicker">04 / Education & Credentials</p>
+      <h2>Continuous <span>learning.</span></h2>
+    </div>
+    <div class="credential-grid">
+      <article><span class="credential-year">2018—2021</span><h3>Bachelor's in Computer Science</h3><p>Mudhoji College, Phaltan · Satara, Maharashtra</p></article>
+      <article><span class="credential-year">Certified</span><h3>Java Programming</h3><p>Cutshort Certified Java — Advanced</p></article>
+      <article><span class="credential-year">Oct 2021</span><h3>Java By Kiran</h3><p>Kiran Academy · Pune, Maharashtra · Java Programming </p></article>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div>
+      <p class="section-kicker">05 / Contact</p>
+      <h2>Have a project or role in mind?</h2>
+      <p>Let’s build something dependable, maintainable, and useful.</p>
+    </div>
+    <a class="contact-button" href="mailto:oshinde91199@gmail.com">
+      <span>Say hello</span><strong>↗</strong>
+    </a>
+  </section>
+</main>
